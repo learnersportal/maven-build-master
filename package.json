@@ -1,0 +1,1 @@
+{"name":"node-sample-app","version":"0.1.0","description":"A minimal Node.js sample application for learnersportal/maven-build-master","main":"index.js","scripts":{"start":"node index.js","test":"node test.js"},"engines":{"node":">=14"},"author":"learnersportal","license":"MIT"}

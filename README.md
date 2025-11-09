@@ -1,15 +1,34 @@
-Servlet example with corresponding Dockerfile
+# node-sample-app
 
-Use Maven Build first to create war file in Target folder.
+A minimal Node.js sample application added to learnersportal/maven-build-master for demonstration and local testing.
 
-  mvn clean package
+## Files
 
-Artifact will be created in target folder.
+- `index.js` — tiny HTTP server with `/health` endpoint and default text response.
+- `test.js` — small smoke test that calls `/health`.
+- `package.json` — project metadata and npm scripts.
+- `.gitignore` — ignores node_modules and common files.
 
-  docker build -t mavenbuild .
+## Run locally
 
-Once this is done u will be see image using docker image
+1. Install dependencies (none required for this sample):
+   ```bash
+   npm install
+   ```
 
-Use below command to run the container
+2. Start server:
+   ```bash
+   npm start
+   ```
 
-  docker run -d -p 8080:8080 --name dockercontainer mavenbuild
+3. In another terminal, run the smoke test:
+   ```bash
+   npm test
+   ```
+
+4. Open http://localhost:3000/ and http://localhost:3000/health
+
+## Notes
+
+- This is intentionally dependency-free (uses built-in `http`) so it's easy to run in many environments.
+- If you prefer an Express-based sample, I can replace `index.js` and add `express` to `package.json`. 
